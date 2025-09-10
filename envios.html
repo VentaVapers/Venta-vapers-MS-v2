@@ -2,39 +2,59 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Envíos - Venta Vapers MS</title>
-<style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:Arial,Helvetica,sans-serif;background:#f0f4f8;color:#111}
-  header{padding:20px;background:#1f2937;color:#fff;text-align:center}
-  header h1{font-size:32px}
-  main{max-width:800px;margin:40px auto;padding:0 20px}
-  .info{background:#fff;padding:30px;border-radius:12px;box-shadow:0 4px 12px rgba(0,0,0,.1);font-size:18px;line-height:1.8}
-  .muted{color:#666;font-size:16px;margin-top:10px}
-  .btn{display:inline-block;margin-top:30px;background:#3b82f6;color:#fff;padding:12px 28px;border-radius:10px;text-decoration:none;font-weight:500;transition:background .3s,transform .3s}
-  .btn:hover{background:#2563eb;transform:scale(1.05)}
-  footer{margin:40px auto;padding:20px;text-align:center;color:#666;font-size:14px}
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<header>
+<nav id="navbar">
+  <a href="index.html">Inicio</a>
+  <a href="productos.html">Productos</a>
+  <a href="pagos.html">Pagos</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
+<header style="height:50vh;background:#1d4ed8;display:flex;align-items:center;justify-content:center;color:#fff;text-align:center;">
   <h1>Envíos</h1>
 </header>
 
-<main>
-  <div class="info">
-    <p>Realizamos envíos <strong>solo dentro de la Marina Alta</strong>.</p>
-    <p class="muted">No se aceptan devoluciones.</p>
-  </div>
-
-  <a href="index.html" class="btn">Volver a Inicio</a>
-</main>
+<section style="max-width:1100px;margin:80px auto;padding:0 20px;">
+  <h2 style="text-align:center;margin-bottom:40px;">Información de Envíos</h2>
+  <div class="card" style="margin:0 auto;max-width:600px;text-align:center;"><p>Realizamos envíos <strong>solo dentro de la Marina Alta</strong>. No se aceptan devoluciones.</p></div>
+</section>
 
 <footer>
-  © Venta Vapers MS
+  <div class="footer-container">
+    <div>
+      <h3>Contacto</h3>
+      <ul>
+        <li><a href="https://instagram.com/flashdiego_27" target="_blank">@flashdiego_27</a></li>
+        <li><a href="https://instagram.com/matiiimss.__" target="_blank">@matiiimss.__</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Secciones</h3>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="pagos.html">Pagos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Síguenos</h3>
+      <a href="https://instagram.com/flashdiego_27" target="_blank"><img src="img/instagram.png" style="width:30px;height:30px;margin-right:10px;"></a>
+      <a href="https://instagram.com/matiiimss.__" target="_blank"><img src="img/instagram.png" style="width:30px;height:30px;"></a>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:30px;font-size:14px;">© Venta Vapers MS</p>
 </footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>{if(window.scrollY>50) navbar.classList.add('scrolled'); else navbar.classList.remove('scrolled');});
+</script>
 
 </body>
 </html>
