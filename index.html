@@ -2,37 +2,125 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Venta Vapers MS</title>
 <style>
-  *{margin:0;padding:0;box-sizing:border-box}
-  body{font-family:Arial,Helvetica,sans-serif;background:#f0f4f8;color:#111;text-align:center;overflow-x:hidden}
-  header{padding:60px 20px;background:#1f2937;color:#fff}
-  header h1{font-size:40px;margin-bottom:10px}
-  header p{font-size:18px;color:#cbd5e1;margin-bottom:30px}
-  main{padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:25px}
-  .btn{display:inline-block;background:#3b82f6;color:#fff;padding:16px 32px;border-radius:10px;text-decoration:none;font-weight:500;transition:background .3s,transform .3s}
-  .btn:hover{background:#2563eb;transform:scale(1.05)}
-  footer{margin:40px auto;padding:20px;text-align:center;color:#666;font-size:14px}
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{font-family:'Segoe UI',Tahoma,sans-serif;background:#f0f4f8;color:#111;overflow-x:hidden;scroll-behavior:smooth;}
+  a{text-decoration:none;color:inherit;}
+
+  /* Menú fijo superior */
+  nav{
+    position:fixed;top:0;left:0;width:100%;display:flex;justify-content:center;gap:20px;padding:15px 0;
+    background:rgba(0,0,0,0.2);backdrop-filter:blur(8px);z-index:1000;transition:background .3s;
+  }
+  nav.scrolled{background:rgba(0,0,0,0.8);}
+  nav a{color:#fff;padding:10px 20px;border-radius:8px;transition:background .3s;}
+  nav a:hover{background:#3b82f6;}
+
+  /* Hero */
+  header{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;height:100vh;
+    background: linear-gradient(135deg,#1f2937,#3b82f6);
+    color:#fff;text-align:center;position:relative;overflow:hidden;
+    background-attachment:fixed;
+  }
+  header h1{font-size:3.5rem;margin-bottom:10px;opacity:0;transform:translateY(-40px);animation:fadeInDown 1s forwards;}
+  header p{font-size:1.5rem;margin-bottom:30px;opacity:0;transform:translateY(40px);animation:fadeInUp 1s forwards 0.5s;}
+  @keyframes fadeInDown{to{opacity:1;transform:translateY(0);}}
+  @keyframes fadeInUp{to{opacity:1;transform:translateY(0);}}
+
+  /* Hero botones */
+  .hero-buttons{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;}
+  .btn{display:inline-block;background:#3b82f6;color:#fff;padding:16px 32px;border-radius:10px;font-weight:600;transition:all .3s;cursor:pointer;}
+  .btn:hover{background:#2563eb;transform:scale(1.05);box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+
+  /* Productos destacados */
+  section{max-width:1100px;margin:80px auto;padding:0 20px;}
+  section h2{text-align:center;margin-bottom:40px;}
+  .highlight{display:flex;flex-wrap:wrap;justify-content:center;gap:40px;}
+  .card{
+    background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.1);width:280px;text-align:center;transition:transform .3s,box-shadow .3s;
+  }
+  .card:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 10px 20px rgba(0,0,0,0.2);}
+  .card img{width:100%;height:180px;object-fit:cover;transition:transform .3s;}
+  .card:hover img{transform:scale(1.05);}
+  .card h3{font-size:1.25rem;margin:16px 0 8px 0;}
+  .card p{font-size:0.95rem;color:#555;padding:0 10px 16px 10px;}
+
+  /* Footer */
+  footer{background:#1f2937;color:#fff;padding:40px 20px;}
+  footer h3{margin-bottom:10px;}
+  footer ul{list-style:none;}
+  footer ul li{margin-bottom:5px;}
+  footer a{color:#fff;transition:color .3s;}
+  footer a:hover{color:#3b82f6;}
+  footer div{flex:1;}
+  footer .footer-container{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;justify-content:space-between;align-items:flex-start;gap:20px;}
 </style>
 </head>
 <body>
 
+<nav id="navbar">
+  <a href="productos.html">Productos</a>
+  <a href="pagos.html">Pagos</a>
+  <a href="envios.html">Envíos</a>
+  <a href="contacto.html">Contacto</a>
+</nav>
+
 <header>
   <h1>Venta Vapers MS</h1>
-  <p>Tienda de vapers desechables en la Marina Alta. Productos de calidad y envío local.</p>
+  <p>Los mejores vapers desechables en la Marina Alta</p>
+  <div class="hero-buttons">
+    <a href="productos.html" class="btn">Ver Productos</a>
+    <a href="contacto.html" class="btn">Contacto</a>
+  </div>
 </header>
 
-<main>
-  <a href="productos.html" class="btn">Ver Productos</a>
-  <a href="pagos.html" class="btn">Métodos de Pago</a>
-  <a href="envios.html" class="btn">Envíos</a>
-  <a href="contacto.html" class="btn">Contacto</a>
-</main>
+<section id="productos">
+  <h2>Productos Destacados</h2>
+  <div class="highlight">
+    <div class="card"><img src="img/bang50k.jpg" alt="Bang King Twins 50k"><h3>Bang King Twins 50k</h3><p>2 sabores por dispositivo. Calidad garantizada.</p></div>
+    <div class="card"><img src="img/waspe60k.jpg" alt="Waspe 60k"><h3>Waspe 60k</h3><p>3 sabores por dispositivo. Disfruta de variedad.</p></div>
+  </div>
+</section>
 
 <footer>
-  © Venta Vapers MS
+  <div class="footer-container">
+    <div>
+      <h3>Contacto</h3>
+      <p>Envía un DM a Instagram:</p>
+      <ul>
+        <li><a href="https://instagram.com/flashdiego_27" target="_blank">@flashdiego_27</a></li>
+        <li><a href="https://instagram.com/matiiimss.__" target="_blank">@matiiimss.__</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Secciones</h3>
+      <ul>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="pagos.html">Métodos de Pago</a></li>
+        <li><a href="envios.html">Envíos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Síguenos</h3>
+      <a href="https://instagram.com/flashdiego_27" target="_blank"><img src="img/instagram.png" alt="Instagram" style="width:30px;height:30px;margin-right:10px;"></a>
+      <a href="https://instagram.com/matiiimss.__" target="_blank"><img src="img/instagram.png" alt="Instagram" style="width:30px;height:30px;"></a>
+    </div>
+  </div>
+  <p style="text-align:center;margin-top:30px;font-size:14px;">© Venta Vapers MS - Tienda de vapers desechables</p>
 </footer>
+
+<script>
+  const navbar=document.getElementById('navbar');
+  window.addEventListener('scroll',()=>{
+    if(window.scrollY>50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+</script>
 
 </body>
 </html>
+
